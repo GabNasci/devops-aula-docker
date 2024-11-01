@@ -38,7 +38,7 @@ for i in range(attempts):
                     last_name='User',
                     email='admin@admin.com',
                     role=appbuilder.sm.find_role(appbuilder.sm.auth_role_admin),
-                    password='lal'
+                    password='lil'
                 )
         logger.info("Banco de dados inicializado com sucesso.")
         break
