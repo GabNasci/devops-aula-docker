@@ -6,7 +6,7 @@ pipeline {
             steps {
                 script {
                     // Step 1: Constrói os containers definidos no docker-compose.yml
-                    sh 'sudo docker compose build'
+                    sh 'docker compose build'
                 }
             }
         }
@@ -15,7 +15,7 @@ pipeline {
             steps {
                 script {
                     // Step 2: Inicia os containers
-                    sh 'sudo docker compose up -d'
+                    sh 'docker compose up -d'
                 }
             }
         }
@@ -24,7 +24,7 @@ pipeline {
     post {
         always {
             // Limpa os containers e redes criados pelo docker-compose
-            sh 'sudo docker compose down'
+            sh 'docker compose down'
         }
     }
 }
