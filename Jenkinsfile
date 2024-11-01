@@ -21,10 +21,4 @@ pipeline {
         }
     }
 
-    post {
-        always {
-            // Limpa os containers e redes criados pelo docker-compose
-            sh 'docker compose down'
-        }
-    }
 }
