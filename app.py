@@ -5,9 +5,13 @@ from flask_appbuilder import AppBuilder, SQLA
 from flask_appbuilder.models.sqla.interface import SQLAInterface
 from flask_appbuilder import ModelView
 from sqlalchemy.exc import OperationalError
+from prometheus_flask_exporter import PrometheusMetrics
 import logging
 
 app = Flask(__name__)
+
+metrics = PrometheusMetrics(app)
+
 
 # Configuração da chave secreta para sessões
 app.config['SECRET_KEY'] = 'minha_chave_secreta_super_secreta'  # Substitua por uma chave segura
